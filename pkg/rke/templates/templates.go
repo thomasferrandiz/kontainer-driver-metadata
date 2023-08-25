@@ -30,6 +30,8 @@ const (
 	calicov3250          = "calico-v3.25.0"
 	calicov3261          = "calico-v3.26.1"
 
+	tigeraoperatorv3261 = "tigera-operator-v3.26.1"
+
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
 	canalv115                     = "canal-v1.15"
@@ -111,6 +113,7 @@ var TemplateIntroducedRanges = map[string][]string{
 	kdm.Nodelocal: {">=1.17.4-rancher1-1", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.15.11-rancher1-1 <1.16.0-alpha"},
 }
 
+// TODO_TF: add tigera operator in this function?
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
@@ -307,6 +310,8 @@ func getTemplates() map[string]string {
 		calicov3241:          CalicoTemplateV3_24_1,
 		calicov3250:          CalicoTemplateV3_25_0,
 		calicov3261:          CalicoTemplateV3_26_1,
+
+		tigeraoperatorv3261: TigeraOperatorTemplateV3_26_1,
 
 		flannelv115:          FlannelTemplateV115,
 		flannelv116:          FlannelTemplateV116,
