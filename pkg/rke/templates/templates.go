@@ -113,12 +113,11 @@ var TemplateIntroducedRanges = map[string][]string{
 	kdm.Nodelocal: {">=1.17.4-rancher1-1", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.15.11-rancher1-1 <1.16.0-alpha"},
 }
 
-// TODO_TF: add tigera operator in this function?
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.27.0-rancher1-1":                      calicov3261,
-			">=1.26.0-rancher1-1 <1.27.0-rancher1":     calicov3250,
+			">=1.27.0-rancher1-1":                      tigeraoperatorv3261,
+			">=1.26.0-rancher1-1 <1.27.0-rancher1":     tigeraoperatorv3261, //TODO_TF: only for tests, REVERT
 			">=1.25.0-rancher1-1 <1.26.0-rancher1-1":   calicov3241,
 			">=1.24.10-rancher1-1 <1.25.0-rancher1-1":  calicov3225Rancher2,
 			">=1.24.9-rancher1-1 <1.24.10-rancher1-1":  calicov3225,
